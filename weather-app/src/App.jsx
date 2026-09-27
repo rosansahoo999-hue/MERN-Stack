@@ -39,14 +39,15 @@ function App() {
           <h1 className='text-[40px] font-bold py-12.5 text-white'>Simple Weather App</h1>
 
           <form onSubmit={getData}>
-            <input type="text" className='w-75 h-10 pl-3 bg-[white] text-[black]' placeholder='City Name' value={city} onChange={(e)=>setCity(e.target.value)} /> <button className='bg-[blue]'>Submit</button>
+            <input type="text" className='w-75 h-10 pl-3 bg-[white] text-[black]' placeholder='City Name' value={city} onChange={(e)=>setCity(e.target.value)} /> 
+            <button className='bg-[blue]'>Submit</button>
           </form>
 
           <div className='w-100 mx-auto bg-white shadow-lg mt-10 p-6.25 text-[black] relative'>
-            <img src='https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif' width={100}                       className={`absolute left-[40%] ${isloading? "" : "hidden"}`} />
+            <img src='https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif' width={100} className={`absolute left-[40%] ${isloading? "" : "hidden"}`} />
 
             {wdetails!==undefined 
-            ?
+            ?   
             <>
               <h3 className='font-bold text-[30px]'>
                 {wdetails.name}
