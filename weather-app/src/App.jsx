@@ -32,18 +32,18 @@ function App() {
     console.log("Welcome to Ws")
   },[counter])
   return (
-      <div className='w-[100%] h-[100vh] bg-[#4aacb1] text-[black]'>
+      <div className='w-full h-screen bg-[#4aacb1] text-[black]'>
         {counter}
         <button onClick={changeCounter}>Count</button>
-        <div className='max-w-[1320px] mx-auto'>
-          <h1 className='text-[40px] font-bold py-[50px] text-white'>Simple Weather App</h1>
+        <div className='max-w-330 mx-auto'>
+          <h1 className='text-[40px] font-bold py-12.5 text-white'>Simple Weather App</h1>
 
           <form onSubmit={getData}>
-            <input type="text" className='w-[300px] h-[40px] pl-3 bg-[white] text-[black]' placeholder='City Name' value={city}             onChange={(e)=>setCity(e.target.value)} /> <button className='bg-[blue]'>Submit</button>
+            <input type="text" className='w-75 h-10 pl-3 bg-[white] text-[black]' placeholder='City Name' value={city} onChange={(e)=>setCity(e.target.value)} /> <button className='bg-[blue]'>Submit</button>
           </form>
 
-          <div className='w-[400px] mx-auto bg-white shadow-lg mt-[40px] p-[25px] text-[black] relative'>
-            <img src='https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif' width={100}                                           className={`absolute left-[40%] ${isloading? "" : "hidden"}`} />
+          <div className='w-100 mx-auto bg-white shadow-lg mt-10 p-6.25 text-[black] relative'>
+            <img src='https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif' width={100}                       className={`absolute left-[40%] ${isloading? "" : "hidden"}`} />
 
             {wdetails!==undefined 
             ?
@@ -54,10 +54,10 @@ function App() {
                   {wdetails.sys.country}
                 </span>
               </h3>
-              <h2 className='font-bold text-[40px] bg-[gray] w-[100px]'>
+              <h2 className='font-bold text-[40px] bg-[gray] w-25'>
                 {wdetails.main.temp}
               </h2>
-              <img src={`http://openweathermap.org/img/w/${wdetails.weather[0].icon}.png`} className='w-[100px] h-[100px]' alt="weather" />
+              <img src={`http://openweathermap.org/img/w/${wdetails.weather[0].icon}.png`} className='w-25 h-25' alt="weather" />
               <p>
                 {wdetails.weather[0].description}
               </p>
